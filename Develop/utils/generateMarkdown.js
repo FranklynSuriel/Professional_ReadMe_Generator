@@ -1,7 +1,8 @@
 // TODO: Create a function that returns a license badge based on which license is passed in
 // If there is no license, return an empty string
+let licenseBadge = ""
 function renderLicenseBadge(license) {
-  const licenseBadge = ""
+  
   switch (license) {
     case 'Apache':
       licenseBadge = 'https://img.shields.io/badge/licence-Apache-blue'
@@ -23,7 +24,7 @@ function renderLicenseBadge(license) {
   }
   return licenseBadge;
 }
-
+console.log(licenseBadge.data)
 // TODO: Create a function that returns the license link
 // If there is no license, return an empty string
 function renderLicenseLink(license) {}
@@ -36,7 +37,7 @@ function renderLicenseSection(license) {}
 function generateMarkdown(data) {
   return `# ${data.title}
  
-![License](https://img.shields.io/badge/licence-${data.license}-green)
+![License](https://img.shields.io/badge/license-${data.license}-green)
 
   
 ## Description
@@ -69,11 +70,11 @@ ${data.usage}
 
 ## License
 
-${renderLicenseBadge()}
+This project is licensed under the ${data.license} license.
 
 
 
-## Contributions
+## Contributing
 
 ${data.contributions}
 
@@ -87,8 +88,12 @@ ${data.test}
 
 ## Questions
 
-github.com/${data.gitHub}  
+[github.com/${data.gitHub}](https://github.com/${data.gitHub})
+
+Questions about this proyect can be sent to:
 ${data.email}
+Please especify the name of the proyect in the subject of the email.
+
 `;
 }
 

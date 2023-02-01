@@ -54,19 +54,19 @@ const questions = [{
 // fs.writeFile('./README.md', readmeContent, (err) => 
 // err ? console.log(err) : console.log('Successfully created README.md!!') 
 // );
-
 // TODO: Create a function to initialize app
 function init() {
-    inquirer
-        .prompt(questions)
-        .then((response)=>{  
-            console.log('Successfully created README.md!!');          
-            const readmeContent = generateMarkdown(response)
-            fs.writeFile('../README.md', readmeContent, (err) => 
-            err ? console.log(err) : console.log('Successfully created README.md!!') 
-            );
+  inquirer
+  .prompt(questions)
+  .then((response)=>{  
+    console.log('Successfully created README.md!!');
+    const license = response.license
+    const readmeContent = generateMarkdown(response)
+    fs.writeFile('../README.md', readmeContent, (err) => 
+    err ? console.log(err) : console.log('Successfully created README.md!!') 
+    );
 
-        })
+  })
 }
 
 // Function call to initialize app

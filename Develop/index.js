@@ -1,10 +1,10 @@
-// TODO: Include packages needed for this application
+// packages and files needed for this application
 const inquirer = require('inquirer');
 const fs = require('fs/promises');
 const generateMarkdown = require('./utils/generateMarkdown');
 
 
-// TODO: Create an array of questions for user input
+// Array of questions for user input
 const questions = [{
   type: 'input',
   name: 'title',
@@ -13,57 +13,66 @@ const questions = [{
 {
   type: 'input',
   name: 'description',
-  message: 'Enter a description of your project?',
+  message: 'Enter a description of your project:',
 },
 {
   type: 'input',
   name: 'installation',
-  message: 'Enter instalation instructions?',
+  message: 'Enter installation instructions:',
 },
 {
   type: 'input',
   name: 'usage',
-  message: 'Enter usage instructions?',
+  message: 'Enter usage instructions:',
+},
+{
+  type: 'input',
+  name: 'links',
+  message: 'Enter link to video (ex: [mylink](https://mylink.com)) or file path (ex: ![file description](./myFilePath)) :',
+},
+{
+  type: 'input',
+  name: 'credits',
+  message: 'Enter a list of collaborators:',
 },
 {
   type: 'list',
   name: 'license',
-  message: 'Choose a license for your project:/n',
+  message: 'Choose a license for your project:',
   choices: ['Apache', 'GNU', 'MIT', 'BSD', 'Mozilla', 'None', 'Unlicense'],
 },
 {
   type: 'input',
   name: 'contributions',
-  message: 'Enter contributions guidelines?',
+  message: 'Enter contributions guidelines:',
 },
 {
   type: 'input',
   name: 'test',
-  message: 'Enter test instructions?',
+  message: 'Enter test instructions:',
 },
 {
   type: 'input',
   name: 'gitHub',
-  message: 'Enter your gitHub username?',
+  message: 'Enter your github username (ex: username):',
 },
 {
   type: 'input',
   name: 'email',
-  message: 'Enter your email?',
+  message: 'Enter your email:',
 },];
 
 
-// TODO: Create a function to initialize app
+// Function to initialize app
 function init() {
   inquirer
     .prompt(questions)
     .then((response) => {
-      const license = response.license
       const readmeContent = generateMarkdown(response)
       console.log('Successfully created README.md!!');
-      fs.writeFile('../README.md', readmeContent)
+      fs.writeFile('./README.md', readmeContent)
     })
-    .catch(err => err ? console.log(err) : console.log('Successfully created README.md!!'));
+    .catch((err) => err ? console.log(err) : console.log('Successfully created README.md!!'));
 
 }
 

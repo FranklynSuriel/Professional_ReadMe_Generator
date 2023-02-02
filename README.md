@@ -23,6 +23,8 @@ No installation Needed. Open it in a terminal or git bash.
 
 To use the professional README generator, you will have to use a terminal or git bash. To start the application use **node index.js** and answer each of the questions. After finished all question a message with the status will appear and a README.md file will be created.
 
+[Walkthrough video](https://drive.google.com/file/d/1ymUHTH3mpvdy6_fJjcreOkLxHbblF2C1/view?usp=sharing)
+
 ![A Readme File of the project](./Develop/assets/pictures/readmeGenerator.jpg)
 
 ## Credits

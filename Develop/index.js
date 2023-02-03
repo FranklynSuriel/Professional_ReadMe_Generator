@@ -69,10 +69,10 @@ function init() {
     .prompt(questions)
     .then((response) => {
       const readmeContent = generateMarkdown(response)
-      console.log('Successfully created README.md!!');
       fs.writeFile('./README.md', readmeContent)
+      console.log('Successfully created README.md!!');
     })
-    .catch((err) => err ? console.log(err) : console.log('Successfully created README.md!!'));
+    .catch((err) => console.log('An error has occurred, please try again!!'));
 
 }
 

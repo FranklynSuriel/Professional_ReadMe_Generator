@@ -43,7 +43,7 @@ sample
 
 ## Questions
 
-[github.com/franklynSuriel](https://github.com/franklynSuriel)
+[github.com/franklynsuriel](https://github.com/franklynsuriel)
 
 Questions about this proyect or to report an issue can be sent to:
 fsuriel@gmail.com. Please especify the name of the proyect in the subject of the email.
